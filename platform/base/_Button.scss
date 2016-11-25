@@ -1,0 +1,36 @@
+// Styles for buttons
+
+@import 'Config';
+
+// Default padding for the button
+$padding-button: 10px 20px !default;
+// Default border radius for the button
+$border-radius-button: 2px !default;
+// Button colors
+$colors-button: $colors !default;
+// Button color names
+$color-button-names: $color-names !default;
+
+
+.button {
+  display: inline-block;
+  padding: $padding-button;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-button;
+  cursor: pointer;
+  @include transition(all 0.3s);
+
+  @for $i from 1 through length($colors-button) {
+    $color-button: nth($colors-button, $i);
+    $color-button-name: nth($color-button-names, $i);
+
+    @include modifier($color-button-name) {
+      background-color: $color-button;
+
+      &:hover {
+        background-color: darken($color-button, 4%);
+      }
+    }
+  }
+}
