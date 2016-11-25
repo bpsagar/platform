@@ -1,0 +1,20 @@
+// Style for code tag
+
+$font-code: 'Inconsolata', monospace !default;
+$font-code-url: 'https://fonts.googleapis.com/css?family=Inconsolata' !default;
+$background-color-code: #EEE !default;
+$color-code: $black !default;
+$padding-code: 10px;
+$border-radius-code: 2px;
+
+
+@import url($font-code-url);
+
+code {
+  font-family: $font-code;
+  display: block;
+  padding: $padding-code;
+  background-color: $background-color-code;
+  color: $color-code;
+  border-radius: $border-radius-code;
+}
