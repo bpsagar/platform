@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Cabin:400,400i,700");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -235,6 +235,24 @@ h6 {
   margin: 0 0 1rem 0;
   color: #222; }
 
+p {
+  margin: 0 0 0.5rem 0; }
+
+code {
+  font-family: "Inconsolata", monospace; }
+
+ul--decimal, ol--decimal, dl--decimal, .list--decimal {
+  list-style-type: decimal;
+  padding-left: 20px; }
+ul--disc, ol--disc, dl--disc, .list--disc {
+  list-style-type: disc;
+  padding-left: 20px; }
+ul--circle, ol--circle, dl--circle, .list--circle {
+  list-style-type: circle;
+  padding-left: 20px; }
+ul li, ol li, dl li, .list li {
+  margin: 0 0 1rem 0; }
+
 .link {
   text-decoration: none;
   border-bottom: 1px solid transparent;
@@ -265,14 +283,6 @@ h6 {
     .link--yellow:hover {
       color: #c9a21b;
       border-bottom: 1px solid #c9a21b; }
-
-code {
-  font-family: "Inconsolata", monospace;
-  display: block;
-  padding: 10px;
-  background-color: #EEE;
-  color: #000;
-  border-radius: 2px; }
 
 .button {
   display: inline-block;

@@ -1,6 +1,7 @@
-// Basic configuration variables
+// platform/base/_Config.scss
+// Variable names follow this pattern: ${property-name}-{component}
 
-// Colors
+// Basic colors
 $white: #FFF;
 $black: #000;
 $gray: #444;
@@ -11,13 +12,13 @@ $red: #E82F3A;
 $blue: #6988E9;
 $yellow: #E2B92B;
 
-// Font related variables
+// Change these variables to your requirement
 $font-base: 'Cabin', sans-serif !default;
 $font-base-url: 'https://fonts.googleapis.com/css?family=Cabin:400,400i,700' !default;
 $font-size-base: 1.6rem !default;
 $line-height-base: 1.3;
-
-// Color related variables
 $color-base: $gray !default;
+
+// Define a list of colors that is used everywhere with the corresponding color name while will be used in modifiers
 $colors: $red $green $blue $yellow !default;
 $color-names: 'red', 'green', 'blue', 'yellow' !default;

@@ -11,6 +11,14 @@ $margin-heading: 0 0 1.0rem 0 !default;
 // Heading color
 $color-heading: $gray-dark !default;
 
+$margin-paragraph: 0 0 0.5rem 0 !default;
+
+$font-code: 'Inconsolata', monospace !default;
+$font-code-url: 'https://fonts.googleapis.com/css?family=Inconsolata:400,700' !default;
+
+$margin-list-item: 0 0 1.0rem 0;
+$list-style-types: decimal, disc, circle !default;
+
 // Link colors
 $colors-link: $colors !default;
 // Link color names
@@ -24,6 +32,31 @@ $color-link-names: $color-names !default;
     line-height: nth($line-height-headings, $i);
     margin: $margin-heading;
     color: $color-heading;
+  }
+}
+
+// Styles for paragraph tag
+p {
+  margin: $margin-paragraph;
+}
+
+// Styles for code tag
+@import url($font-code-url);
+code {
+  font-family: $font-code;
+}
+
+// Styles for lists
+ul, ol, dl, .list {
+  @each $list-style-type in $list-style-types {
+    @include modifier($list-style-type) {
+      list-style-type: $list-style-type;
+      padding-left: 20px;
+    }
+  }
+  
+  li {
+    margin: $margin-list-item;
   }
 }
 
