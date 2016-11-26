@@ -1,0 +1,72 @@
+// Styles for checkbox
+
+@import 'Config';
+@import 'Mixins';
+
+// Variables for checkbox
+$size-checkbox: 2.4rem !default;
+$thickness-checkbox: 0.2rem !default;
+$border-thickness-checkbox: 0.2rem !default;
+$border-radius-checkbox: $border-radius-base !default;
+$desaturate-percentage-checkbox: 10% !default;
+$type-checkbox: 'fill' !default;
+$colors-checkbox: $colors !default;
+$color-checkbox-names: $color-names !default;
+$size-variants-checkbox: $size-variants-base !default;
+$size-variant-names-checkbox: $size-variant-names-base !default;
+
+
+.checkbox {
+  @include LabelledCheckbox(
+    $size: $size-checkbox,
+    $thickness: $thickness-checkbox,
+    $border-thickness: $border-thickness-checkbox,
+    $border-radius: $border-radius-checkbox,
+    $desaturate-percentage: $desaturate-percentage-checkbox,
+    $type: $type-checkbox);
+
+  @for $i from 1 through length($size-variants-checkbox) {
+    $size-variant: nth($size-variants-checkbox, $i);
+    $size-variant-name: nth($size-variant-names-checkbox, $i);
+    @include modifier($size-variant-name) {
+      @include LabelledCheckbox(
+        $size: $size-checkbox * $size-variant,
+        $thickness: $thickness-checkbox,
+        $border-thickness: $border-thickness-checkbox,
+        $border-radius: $border-radius-checkbox,
+        $desaturate-percentage: $desaturate-percentage-checkbox,
+        $type: $type-checkbox);
+    }
+  }
+
+  @for $i from 1 through length($colors-checkbox) {
+    $color-checkbox: nth($colors-checkbox, $i);
+    $color-checkbox-name: nth($color-checkbox-names, $i);
+
+    @include modifier($color-checkbox-name) {
+      @include LabelledCheckbox(
+        $size: $size-checkbox,
+        $thickness: $thickness-checkbox,
+        $color: $color-checkbox,
+        $border-thickness: $border-thickness-checkbox,
+        $border-radius: $border-radius-checkbox,
+        $desaturate-percentage: $desaturate-percentage-checkbox,
+        $type: $type-checkbox);
+
+      @for $i from 1 through length($size-variants-checkbox) {
+        $size-variant: nth($size-variants-checkbox, $i);
+        $size-variant-name: nth($size-variant-names-checkbox, $i);
+        @include modifier($size-variant-name) {
+          @include LabelledCheckbox(
+            $size: $size-checkbox * $size-variant,
+            $thickness: $thickness-checkbox,
+            $color: $color-checkbox,
+            $border-thickness: $border-thickness-checkbox,
+            $border-radius: $border-radius-checkbox,
+            $desaturate-percentage: $desaturate-percentage-checkbox,
+            $type: $type-checkbox);
+        }
+      }
+    }
+  }
+}

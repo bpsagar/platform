@@ -1,25 +1,41 @@
 // Styles for buttons
 
 @import 'Config';
+@import 'Functions';
 
-// Default padding for the button
-$padding-button: 10px 20px !default;
-// Default border radius for the button
-$border-radius-button: 2px !default;
-// Button colors
+$font-button: $font-base !default;
+$font-size-button: $font-size-base !default;
+$font-weight-button: 600;
+$padding-button: 8px 18px !default;
+$border-radius-button: $border-radius-base !default;
 $colors-button: $colors !default;
-// Button color names
 $color-button-names: $color-names !default;
+$color-darken-percentage-button: $color-darken-percentage-base !default;
+$transition-duration-button: $transition-duration-base !default;
+$size-variants-button: $size-variants-base !default;
+$size-variant-names-button: $size-variant-names-base !default;
 
 
 .button {
+  font-family: $font-button;
+  font-size: $font-size-button;
+  font-weight: $font-weight-button;
   display: inline-block;
   padding: $padding-button;
   color: $white;
   border: none;
   border-radius: $border-radius-button;
   cursor: pointer;
-  @include transition(all 0.3s);
+  @include transition(all $transition-duration-button);
+
+  @for $i from 1 through length($size-variants-button) {
+    $size-variant: nth($size-variants-button, $i);
+    $size-variant-name: nth($size-variant-names-button, $i);
+    @include modifier($size-variant-name) {
+      font-size: $font-size-button * $size-variant;
+      padding: multiply($padding-button, $size-variant);
+    }
+  }
 
   @for $i from 1 through length($colors-button) {
     $color-button: nth($colors-button, $i);
@@ -29,7 +45,7 @@ $color-button-names: $color-names !default;
       background-color: $color-button;
 
       &:hover {
-        background-color: darken($color-button, 4%);
+        background-color: darken($color-button, $color-darken-percentage-button);
       }
     }
   }

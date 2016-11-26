@@ -1,0 +1,53 @@
+// Styles for links
+
+@import 'Config';
+@import 'Mixins';
+
+// Variables for links
+$font-link: $font-base !default;
+$font-size-link: $font-size-base !default;
+$font-weight-link: 400 !default;
+$border-bottom-link: 1px solid transparent !default;
+$border-bottom-link-hover: 1px solid !default;
+$colors-link: $colors !default;
+$color-link-names: $color-names !default;
+$color-darken-percentage-link: $color-darken-percentage-base !default;
+$transition-duration-link: $transition-duration-base !default;
+$size-variants-link: $size-variants-base !default;
+$size-variant-names-link: $size-variant-names-base !default;
+
+
+.link {
+  font-family: $font-link;
+  font-size: $font-size-link;
+  font-weight: $font-weight-link;
+  text-decoration: none;
+  border-bottom: $border-bottom-link;
+  @include transition(all $transition-duration-link);
+
+  @for $i from 1 through length($size-variants-link) {
+    $size-variant: nth($size-variants-link, $i);
+    $size-variant-name: nth($size-variant-names-link, $i);
+    @include modifier($size-variant-name) {
+      font-size: $font-size-link * $size-variant;
+    }
+  }
+
+  &:hover {
+    border-bottom: $border-bottom-link-hover;
+  }
+
+  @for $i from 1 through length($colors-link) {
+    $color-link: nth($colors-link, $i);
+    $color-link-name: nth($color-link-names, $i);
+
+    @include modifier($color-link-name) {
+      color: $color-link;
+
+      &:hover {
+        color: darken($color-link, 8%);
+        border-bottom: 1px solid darken($color-link, 8%);
+      }
+    }
+  }
+}

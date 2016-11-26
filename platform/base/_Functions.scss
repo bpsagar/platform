@@ -1,0 +1,8 @@
+
+@function multiply($list, $scale) {
+  $temp-list: ();
+  @each $item in $list {
+    $temp-list: append($temp-list, $item * $scale);
+  }
+  @return $temp-list;
+}
