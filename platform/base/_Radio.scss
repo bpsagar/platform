@@ -4,6 +4,7 @@
 @import 'Mixins';
 
 // Variables for radio
+$font-size-radio: $font-size-base !default;
 $size-radio: 2.4rem !default;
 $thickness-radio: 1.4rem !default;
 $border-thickness-radio: 0.2rem !default;
@@ -16,6 +17,7 @@ $size-variant-names-radio: $size-variant-names-base !default;
 
 
 .radio {
+  font-size: $font-size-radio;
   @include LabelledRadio(
     $size: $size-radio,
     $thickness: $thickness-radio,
@@ -27,6 +29,7 @@ $size-variant-names-radio: $size-variant-names-base !default;
     $size-variant: nth($size-variants-radio, $i);
     $size-variant-name: nth($size-variant-names-radio, $i);
     @include modifier($size-variant-name) {
+      font-size: $font-size-radio * $size-variant;
       @include LabelledRadio(
         $size: $size-radio * $size-variant,
         $thickness: $thickness-radio * $size-variant,
@@ -53,6 +56,7 @@ $size-variant-names-radio: $size-variant-names-base !default;
         $size-variant: nth($size-variants-radio, $i);
         $size-variant-name: nth($size-variant-names-radio, $i);
         @include modifier($size-variant-name) {
+          font-size: $font-size-radio * $size-variant;
           @include LabelledRadio(
             $size: $size-radio * $size-variant,
             $thickness: $thickness-radio * $size-variant,

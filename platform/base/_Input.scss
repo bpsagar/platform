@@ -16,7 +16,7 @@ $size-variants-input: $size-variants-base !default;
 $size-variant-names-input: $size-variant-names-base !default;
 
 
-.input {
+.input, .textarea {
   font-size: $font-size-input;
   width: 100%;
   padding: $padding-input;
@@ -41,7 +41,7 @@ $size-variant-names-input: $size-variant-names-base !default;
     @include modifier($border-color-name) {
       &:hover, &:focus {
         border-color: $border-color;
-        box-shadow: 0 0 5px 0 transparentize($border-color, 0.5);
+        box-shadow: 0 0 3px 0 transparentize($border-color, 0.5);
       }
     }
   }

@@ -4,6 +4,7 @@
 @import 'Mixins';
 
 // Variables for checkbox
+$font-size-checkbox: $font-size-base !default;
 $size-checkbox: 2.4rem !default;
 $thickness-checkbox: 0.2rem !default;
 $border-thickness-checkbox: 0.2rem !default;
@@ -17,6 +18,7 @@ $size-variant-names-checkbox: $size-variant-names-base !default;
 
 
 .checkbox {
+  font-size: $font-size-checkbox;
   @include LabelledCheckbox(
     $size: $size-checkbox,
     $thickness: $thickness-checkbox,
@@ -29,6 +31,7 @@ $size-variant-names-checkbox: $size-variant-names-base !default;
     $size-variant: nth($size-variants-checkbox, $i);
     $size-variant-name: nth($size-variant-names-checkbox, $i);
     @include modifier($size-variant-name) {
+      font-size: $font-size-checkbox * $size-variant;
       @include LabelledCheckbox(
         $size: $size-checkbox * $size-variant,
         $thickness: $thickness-checkbox,
@@ -57,6 +60,7 @@ $size-variant-names-checkbox: $size-variant-names-base !default;
         $size-variant: nth($size-variants-checkbox, $i);
         $size-variant-name: nth($size-variant-names-checkbox, $i);
         @include modifier($size-variant-name) {
+          font-size: $font-size-checkbox * $size-variant;
           @include LabelledCheckbox(
             $size: $size-checkbox * $size-variant,
             $thickness: $thickness-checkbox,

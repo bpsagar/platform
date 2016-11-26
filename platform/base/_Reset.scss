@@ -43,6 +43,11 @@ table {
   border-spacing: 0;
 }
 
+input, input:hover, input:focus,
+textarea, textarea:hover, textarea:focus, {
+  outline: none;
+}
+
 * {
   box-sizing: border-box;
 }
