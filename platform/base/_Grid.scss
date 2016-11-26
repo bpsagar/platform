@@ -2,12 +2,11 @@
 
 @import 'Mixins';
 
-// Width of the main container
+// Container variables
 $width-container: 1024px !default;
 
-// Columns split that would be required
+// Columns variables
 $columns: 2, 3, 4 !default;
-// Default padding between columns
 $padding-column: 0 !default;
 
 
