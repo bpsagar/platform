@@ -16,11 +16,12 @@ $font-base: 'Source Sans Pro', sans-serif !default;
 $font-base-url: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' !default;
 $font-size-base: 1.4rem !default;
 $line-height-base: 1.3;
+$font-weights-base: 300 400 600 700;
 
 // Color related variables
 $color-base: $gray !default;
-$colors: $red $green $blue $orange !default;
-$color-names: 'red', 'green', 'blue', 'orange' !default;
+$colors: $white $black $gray $gray-light $gray-dark $red $green $blue $orange !default;
+$color-names: 'white', 'black', 'gray', 'light-gray', 'dark-gray', 'red', 'green', 'blue', 'orange' !default;
 $color-darken-percentage-base: 10%;
 
 // Border radius for all the components
@@ -30,5 +31,5 @@ $border-radius-base: 2px !default;
 $transition-duration-base: 0.2s;
 
 // Size variants
-$size-variants-base: 0.8, 1.4 !default;
-$size-variant-names-base: 'small', 'big' !default;
+$size-variants-base: 0.5, 0.8, 1.6, 2 !default;
+$size-variant-names-base: 'tiny', 'small', 'big', 'massive' !default;
