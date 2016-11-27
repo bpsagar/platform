@@ -51,14 +51,16 @@ $padding-column: 0 !default;
         width: percentage($i / $column);
         padding: $padding-column;
         vertical-align: top;
+      }
+    }
 
-        @include modifier('middle') {
-          vertical-align: middle;
-        }
+    .t-column {
+      @include modifier('middle') {
+        vertical-align: middle;
+      }
 
-        @include modifier('bottom') {
-          vertical-align: bottom;
-        }
+      @include modifier('bottom') {
+        vertical-align: bottom;
       }
     }
   }

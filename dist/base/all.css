@@ -11486,10 +11486,10 @@ ul li, ol li, dl li, .list li {
     width: 100%;
     padding: 0;
     vertical-align: top; }
-    .t-columns-1 .t-column-1--middle {
-      vertical-align: middle; }
-    .t-columns-1 .t-column-1--bottom {
-      vertical-align: bottom; }
+  .t-columns-1 .t-column--middle {
+    vertical-align: middle; }
+  .t-columns-1 .t-column--bottom {
+    vertical-align: bottom; }
 
 .t-columns-2 {
   display: table;
@@ -11500,19 +11500,15 @@ ul li, ol li, dl li, .list li {
     width: 50%;
     padding: 0;
     vertical-align: top; }
-    .t-columns-2 .t-column-1--middle {
-      vertical-align: middle; }
-    .t-columns-2 .t-column-1--bottom {
-      vertical-align: bottom; }
   .t-columns-2 .t-column-2 {
     display: table-cell;
     width: 100%;
     padding: 0;
     vertical-align: top; }
-    .t-columns-2 .t-column-2--middle {
-      vertical-align: middle; }
-    .t-columns-2 .t-column-2--bottom {
-      vertical-align: bottom; }
+  .t-columns-2 .t-column--middle {
+    vertical-align: middle; }
+  .t-columns-2 .t-column--bottom {
+    vertical-align: bottom; }
 
 .t-columns-3 {
   display: table;
@@ -11523,28 +11519,20 @@ ul li, ol li, dl li, .list li {
     width: 33.33333%;
     padding: 0;
     vertical-align: top; }
-    .t-columns-3 .t-column-1--middle {
-      vertical-align: middle; }
-    .t-columns-3 .t-column-1--bottom {
-      vertical-align: bottom; }
   .t-columns-3 .t-column-2 {
     display: table-cell;
     width: 66.66667%;
     padding: 0;
     vertical-align: top; }
-    .t-columns-3 .t-column-2--middle {
-      vertical-align: middle; }
-    .t-columns-3 .t-column-2--bottom {
-      vertical-align: bottom; }
   .t-columns-3 .t-column-3 {
     display: table-cell;
     width: 100%;
     padding: 0;
     vertical-align: top; }
-    .t-columns-3 .t-column-3--middle {
-      vertical-align: middle; }
-    .t-columns-3 .t-column-3--bottom {
-      vertical-align: bottom; }
+  .t-columns-3 .t-column--middle {
+    vertical-align: middle; }
+  .t-columns-3 .t-column--bottom {
+    vertical-align: bottom; }
 
 .t-columns-4 {
   display: table;
@@ -11555,37 +11543,25 @@ ul li, ol li, dl li, .list li {
     width: 25%;
     padding: 0;
     vertical-align: top; }
-    .t-columns-4 .t-column-1--middle {
-      vertical-align: middle; }
-    .t-columns-4 .t-column-1--bottom {
-      vertical-align: bottom; }
   .t-columns-4 .t-column-2 {
     display: table-cell;
     width: 50%;
     padding: 0;
     vertical-align: top; }
-    .t-columns-4 .t-column-2--middle {
-      vertical-align: middle; }
-    .t-columns-4 .t-column-2--bottom {
-      vertical-align: bottom; }
   .t-columns-4 .t-column-3 {
     display: table-cell;
     width: 75%;
     padding: 0;
     vertical-align: top; }
-    .t-columns-4 .t-column-3--middle {
-      vertical-align: middle; }
-    .t-columns-4 .t-column-3--bottom {
-      vertical-align: bottom; }
   .t-columns-4 .t-column-4 {
     display: table-cell;
     width: 100%;
     padding: 0;
     vertical-align: top; }
-    .t-columns-4 .t-column-4--middle {
-      vertical-align: middle; }
-    .t-columns-4 .t-column-4--bottom {
-      vertical-align: bottom; }
+  .t-columns-4 .t-column--middle {
+    vertical-align: middle; }
+  .t-columns-4 .t-column--bottom {
+    vertical-align: bottom; }
 
 .window {
   width: 100%;

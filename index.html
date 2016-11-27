@@ -4,78 +4,15 @@
     <meta charset="UTF-8">
     <title>Platform</title>
     <link rel="stylesheet" href="dist/base/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
   </head>
   <body>
-    <div class="container">
-      <h1 class="text-center">Platform.scss</h1>
-      <p>
-        Platform.scss is a configurable SCSS framework.
-      </p>
-
-      <h2>Sections</h2>
-      <ul class="list list--decimal">
-        <li><a href="#configuration" class="link link--blue">Configuration</a></li>
-        <li><a href="#grids" class="link link--blue">Grids</a></li>
-        <li><a href="#typography" class="link link--blue">Typography</a></li>
-        <li><a href="#buttons" class="link link--blue">Buttons</a></li>
-        <li><a href="#utilities" class="link link--blue">Utilities</a></li>
-      </ul>
-
-      <section id="configuration">
-        <h3>Configuration</h3>
-        <p>
-          The idea behind this framework is similar to writing themes for a base style.
-          With the help variables (especially lists) in SASS, the framework can be used to create not just a theme, but also extend the base style (by just adding more values to list variables).
-          Each component in this framework is written in such a way that it is configurable.
-          So there is a 'Configuration' section for all the components. Here is a set of project-wide configuration variables:
-        </p>
-        <pre><code data-snippet="snippets/config.scss" data-type="string"></code></pre>
-      </section>
-
-      <section id="grids">
-        <h3>Grids</h3>
-        <h4>Container</h4>
-        <p>Main container of the page</p>
-        <h5>Usage</h5>
-        <pre><code data-snippet="snippets/container.html" data-type="string"></code></pre>
-        <h5>Configuration</h5>
-        <pre><code data-snippet="snippets/container-config.scss" data-type="string"></code></pre>
-
-        <h4>Floating Columns</h4>
-
-        <h4>Tabular Columns</h4>
-      </section>
-
-      <section id="typography">
-        <h3>Typography</h3>
-      </section>
-
-      <section id="buttons">
-        <h3>Buttons</h3>
-      </section>
-
-      <section id="utilities">
-        <h3>Utilities</h3>
-      </section>
+    <div class="window background--light-gray t-columns-1">
+      <div class="t-column-1 t-column--middle text-center">
+        <h1>Platform SCSS Framework</h1>
+        <p class="text--massive text--weight-300">Yes, another framework! Minimal, flexible and extensible.</p>
+        <br>
+        <a class="button button--red" href="https://github.com/bpsagar/platform/archive/master.zip">Download</a>
+      </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('[data-snippet]').each(function() {
-          var url = $(this).data('snippet');
-          var type = $(this).data('type');
-          var language = $(this).data('language');
-          var $container = $(this);
-          $container.load(url, function() {
-            if(type == 'string') {
-              $container.text($container.html());
-            }
-            hljs.highlightBlock($container[0]);
-          });
-        });
-      });
-    </script>
   </body>
 </html>
