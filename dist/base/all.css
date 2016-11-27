@@ -11360,6 +11360,78 @@ body {
           .radio--orange--massive:hover input[type=radio]:checked:checked + *:after {
             opacity: 1; }
 
+.tooltip {
+  position: relative; }
+  .tooltip:hover:before {
+    visibility: visible;
+    opacity: 1; }
+  .tooltip:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    display: inline-block;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    font-weight: 400;
+    width: 15rem;
+    color: #FFF;
+    border-radius: 2px;
+    padding: 0.8rem;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s; }
+  .tooltip--top:before {
+    bottom: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -0.5rem);
+    -moz-transform: translate(-50%, -0.5rem);
+    -ms-transform: translate(-50%, -0.5rem);
+    -o-transform: translate(-50%, -0.5rem);
+    transform: translate(-50%, -0.5rem); }
+  .tooltip--bottom:before {
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0.5rem);
+    -moz-transform: translate(-50%, 0.5rem);
+    -ms-transform: translate(-50%, 0.5rem);
+    -o-transform: translate(-50%, 0.5rem);
+    transform: translate(-50%, 0.5rem); }
+  .tooltip--left:before {
+    right: 100%;
+    top: 50%;
+    -webkit-transform: translate(-0.5rem, -50%);
+    -moz-transform: translate(-0.5rem, -50%);
+    -ms-transform: translate(-0.5rem, -50%);
+    -o-transform: translate(-0.5rem, -50%);
+    transform: translate(-0.5rem, -50%); }
+  .tooltip--right:before {
+    left: 100%;
+    top: 50%;
+    -webkit-transform: translate(0.5rem, -50%);
+    -moz-transform: translate(0.5rem, -50%);
+    -ms-transform: translate(0.5rem, -50%);
+    -o-transform: translate(0.5rem, -50%);
+    transform: translate(0.5rem, -50%); }
+  .tooltip--tiny:before {
+    font-size: 0.7rem;
+    padding: 0.4rem;
+    width: 7.5rem; }
+  .tooltip--small:before {
+    font-size: 1.12rem;
+    padding: 0.64rem;
+    width: 12rem; }
+  .tooltip--big:before {
+    font-size: 2.24rem;
+    padding: 1.28rem;
+    width: 24rem; }
+  .tooltip--massive:before {
+    font-size: 2.8rem;
+    padding: 1.6rem;
+    width: 30rem; }
+
 h1 {
   font-size: 5rem;
   font-weight: 300;
