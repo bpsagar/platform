@@ -1,3 +1,3 @@
 [submodule "platform/mixins"]
 	path = platform/mixins
-	url = git@github.com:bpsagar/platform-mixins.git
+	url = https://github.com/bpsagar/platform-mixins.git
