@@ -12,6 +12,8 @@ $border-radius-tooltip: $border-radius-base !default;
 $transition-duration-tooltip: $transition-duration-base !default;
 $padding-tooltip: 0.8rem !default;
 $spacing-tooltip: 0.5rem !default;
+$colors-tooltip: $colors !default;
+$color-names-tooltip: $color-names !default;
 $size-variants-tooltip: $size-variants-base !default;
 $size-variant-names-tooltip: $size-variant-names-base !default;
 
@@ -81,6 +83,17 @@ $size-variant-names-tooltip: $size-variant-names-base !default;
         font-size: $font-size-tooltip * $size-variant;
         padding: multiply($padding-tooltip, $size-variant);
         width: $width-tooltip * $size-variant;
+      }
+    }
+  }
+
+  @for $i from 1 through length($colors-tooltip) {
+    $color-tooltip: nth($colors-tooltip, $i);
+    $color-tooltip-name: nth($color-names-tooltip, $i);
+
+    @include modifier($color-tooltip-name) {
+      &:before {
+        background-color: $color-tooltip;
       }
     }
   }

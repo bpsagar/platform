@@ -11431,6 +11431,24 @@ body {
     font-size: 2.8rem;
     padding: 1.6rem;
     width: 30rem; }
+  .tooltip--white:before {
+    background-color: #FFF; }
+  .tooltip--black:before {
+    background-color: #000; }
+  .tooltip--gray:before {
+    background-color: #444; }
+  .tooltip--light-gray:before {
+    background-color: #DDD; }
+  .tooltip--dark-gray:before {
+    background-color: #222; }
+  .tooltip--red:before {
+    background-color: #E82F3A; }
+  .tooltip--green:before {
+    background-color: #3AC69F; }
+  .tooltip--blue:before {
+    background-color: #6988E9; }
+  .tooltip--orange:before {
+    background-color: #F7923B; }
 
 h1 {
   font-size: 5rem;
