@@ -10,6 +10,7 @@ $thickness-radio: 1.4rem !default;
 $border-thickness-radio: 0.2rem !default;
 $desaturate-percentage-radio: 10% !default;
 $type-radio: 'outline' !default;
+$color-default-radio: $color-primary !default;
 $colors-radio: $colors !default;
 $color-radio-names: $color-names !default;
 $size-variants-radio: $size-variants-base !default;
@@ -20,6 +21,7 @@ $size-variant-names-radio: $size-variant-names-base !default;
   font-size: $font-size-radio;
   @include LabelledRadio(
     $size: $size-radio,
+    $color: $color-default-radio,
     $thickness: $thickness-radio,
     $border-thickness: $border-thickness-radio,
     $desaturate-percentage: $desaturate-percentage-radio,
@@ -68,4 +70,8 @@ $size-variant-names-radio: $size-variant-names-base !default;
       }
     }
   }
+}
+
+label {
+  @extend .radio;
 }

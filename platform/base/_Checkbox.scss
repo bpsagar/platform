@@ -11,6 +11,7 @@ $border-thickness-checkbox: 0.2rem !default;
 $border-radius-checkbox: $border-radius-base !default;
 $desaturate-percentage-checkbox: 10% !default;
 $type-checkbox: 'fill' !default;
+$color-default-checkbox: $color-primary !default;
 $colors-checkbox: $colors !default;
 $color-checkbox-names: $color-names !default;
 $size-variants-checkbox: $size-variants-base !default;
@@ -21,6 +22,7 @@ $size-variant-names-checkbox: $size-variant-names-base !default;
   font-size: $font-size-checkbox;
   @include LabelledCheckbox(
     $size: $size-checkbox,
+    $color: $color-default-checkbox,
     $thickness: $thickness-checkbox,
     $border-thickness: $border-thickness-checkbox,
     $border-radius: $border-radius-checkbox,
@@ -73,4 +75,8 @@ $size-variant-names-checkbox: $size-variant-names-base !default;
       }
     }
   }
+}
+
+label {
+  @extend .checkbox;
 }

@@ -8,6 +8,7 @@
 $font-size-input: $font-size-base !default;
 $padding-input: 9px 10px !default;
 $border-input: 1px solid $gray-light !default;
+$border-color-default-input: $color-primary !default;
 $border-colors-input: $colors !default;
 $border-color-names: $color-names !default;
 $border-radius-input: $border-radius-base !default;
@@ -24,6 +25,11 @@ $size-variant-names-input: $size-variant-names-base !default;
   border: $border-input;
   border-radius: $border-radius-input;
   @include transition(all $transition-duration-input);
+
+  &:hover, &:focus {
+    border-color: $border-color-default-input;
+    box-shadow: 0 0 3px 0 transparentize($border-color-default-input, 0.5);
+  }
 
   @for $i from 1 through length($size-variants-input) {
     $size-variant: nth($size-variants-input, $i);
@@ -45,4 +51,9 @@ $size-variant-names-input: $size-variant-names-base !default;
       }
     }
   }
+}
+
+input,
+textarea {
+  @extend .input;
 }
