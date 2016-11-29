@@ -8,6 +8,7 @@ $font-size-button: $font-size-base !default;
 $font-weight-button: 600;
 $padding-button: 8px 18px !default;
 $border-radius-button: $border-radius-base !default;
+$color-default-button: $color-primary !default;
 $colors-button: $colors !default;
 $color-button-names: $color-names !default;
 $color-darken-percentage-button: $color-darken-percentage-base !default;
@@ -26,7 +27,12 @@ $size-variant-names-button: $size-variant-names-base !default;
   border: none;
   border-radius: $border-radius-button;
   cursor: pointer;
+  background-color: $color-default-button;
   @include transition(all $transition-duration-button);
+
+  &:hover {
+    background-color: darken($color-default-button, $color-darken-percentage-button);
+  }
 
   @include modifier('block') {
     display: block;
@@ -55,4 +61,9 @@ $size-variant-names-button: $size-variant-names-base !default;
       }
     }
   }
+}
+
+input[type=submit],
+button {
+  @extend .button;
 }
