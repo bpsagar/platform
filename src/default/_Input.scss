@@ -1,0 +1,37 @@
+@import 'variables/Input';
+@import 'Mixins';
+@import 'Functions';
+
+.input {
+  font-family: $input-font-family;
+  font-size: $input-font-size;
+  font-weight: $input-font-weight;
+  width: 100%;
+  padding: $input-padding;
+  background-color: none;
+  border: $input-border;
+  border-radius: $input-border-radius;
+  @include transition(all $input-transition-duration);
+  
+  // Size variant modifiers
+  @each $size-variant-item in $button-size-variant-list {
+    $size-variant-name: nth($size-variant-item, 1);
+    $size-variant: nth($size-variant-item, 2);
+    @include modifier($size-variant-name) {
+      font-size: $input-font-size * $size-variant;
+      padding: multiply($input-padding, $size-variant);
+    }
+  }
+  
+  // Color variant modifiers
+  @each $input-border-color-item in $input-border-color-list {
+    $border-color-name: nth($input-border-color-item, 1);
+    $border-color: nth($input-border-color-item, 2);
+    @include modifier($border-color-name) {
+      &:hover, &:focus {
+        border-color: $border-color;
+        box-shadow: 0 0 3px 0 transparentize($border-color, 0.5);
+      }
+    }
+  }
+}

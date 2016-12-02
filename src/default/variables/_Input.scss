@@ -1,0 +1,28 @@
+// All variables defined here are used for input 
+// All the variables defined here are prefixed with 'input-'
+
+@import 'Base';
+
+// Class name
+$input-class-name: 'input' !default;
+
+// Color
+$input-border-color-list: $base-color-list !default;
+
+// Font
+$input-font-family: $base-font-family !default;
+$input-font-size: $base-font-size !default;
+$input-font-weight: 400 !default;
+
+// Padding
+$input-padding: 9px 10px !default;
+
+// Border
+$input-border: 1px solid #EEE !default;
+$input-border-radius: $base-border-radius !default;
+
+// Transition duration
+$input-transition-duration: $base-transition-duration !default;
+
+// Size variants
+$input-size-variant-list: $base-size-variant-list !default;
