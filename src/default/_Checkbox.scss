@@ -8,7 +8,7 @@
   font-weight: $checkbox-font-weight;
 
   // Size variant modifiers
-  @each $size-variant-item in $button-size-variant-list {
+  @each $size-variant-item in $checkbox-size-variant-list {
     $size-variant-name: nth($size-variant-item, 1);
     $size-variant: nth($size-variant-item, 2);
     @include modifier($size-variant-name) {
@@ -37,7 +37,7 @@
         $desaturate-percentage: $checkbox-desaturate-percentage,
         $type: $checkbox-type);
 
-      @each $size-variant-item in $button-size-variant-list {
+      @each $size-variant-item in $checkbox-size-variant-list {
         $size-variant-name: nth($size-variant-item, 1);
         $size-variant: nth($size-variant-item, 2);
         @include modifier($size-variant-name) {

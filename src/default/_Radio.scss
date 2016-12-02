@@ -1,0 +1,54 @@
+@import 'variables/Radio';
+@import 'Mixins';
+@import 'Functions';
+
+.#{$radio-class-name} {
+  font-family: $radio-font-family;
+  font-size: $radio-font-size;
+  font-weight: $radio-font-weight;
+
+  // Size variant modifiers
+  @each $size-variant-item in $radio-size-variant-list {
+    $size-variant-name: nth($size-variant-item, 1);
+    $size-variant: nth($size-variant-item, 2);
+    @include modifier($size-variant-name) {
+      font-size: $radio-font-size * $size-variant;
+      @include LabelledRadio(
+        $size: $radio-size * $size-variant,
+        $thickness: $radio-thickness * $size-variant,
+        $border-thickness: $radio-border-thickness,
+        $desaturate-percentage: $radio-desaturate-percentage,
+        $type: $radio-type);
+    }
+  }
+
+  // Color variant modifiers
+  @each $radio-color-item in $radio-color-list {
+    $radio-color-name: nth($radio-color-item, 1);
+    $radio-color: nth($radio-color-item, 2);
+    @include modifier($radio-color-name) {
+      @include LabelledRadio(
+        $size: $radio-size,
+        $thickness: $radio-thickness,
+        $color: $radio-color,
+        $border-thickness: $radio-border-thickness,
+        $desaturate-percentage: $radio-desaturate-percentage,
+        $type: $radio-type);
+
+      @each $size-variant-item in $radio-size-variant-list {
+        $size-variant-name: nth($size-variant-item, 1);
+        $size-variant: nth($size-variant-item, 2);
+        @include modifier($size-variant-name) {
+          font-size: $radio-font-size * $size-variant;
+          @include LabelledRadio(
+            $size: $radio-size * $size-variant,
+            $thickness: $radio-thickness * $size-variant,
+            $color: $radio-color,
+            $border-thickness: $radio-border-thickness,
+            $desaturate-percentage: $radio-desaturate-percentage,
+            $type: $radio-type);
+        }
+      }
+    }
+  }
+}

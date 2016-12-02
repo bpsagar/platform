@@ -1,0 +1,33 @@
+// All variables defined here are used for radio buttons
+// All the variables defined here are prefixed with 'radio-'
+
+@import 'Base';
+
+// Class name
+$radio-class-name: 'radio' !default;
+
+// Color
+$radio-color-list: $base-color-list !default;
+
+// Font
+$radio-font-family: $base-font-family !default;
+$radio-font-size: $base-font-size !default;
+$radio-font-weight: 400 !default;
+
+// Size
+$radio-size: 2rem !default;
+
+// Radio inner circle thickness
+$radio-thickness: 1.4rem !default;
+
+// Border
+$radio-border-thickness: 0.2rem !default;
+
+// Desaturation percentage
+$radio-desaturate-percentage: 10% !default;
+
+// Type
+$radio-type: 'outline' !default;
+
+// Size variants
+$radio-size-variant-list: $base-size-variant-list !default;
