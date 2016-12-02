@@ -1,0 +1,105 @@
+@import 'Normalize';
+
+
+// Default variables
+$default-radio-size: 18px;
+$default-radio-thickness: 8px;
+$default-radio-color: #666;
+$default-radio-border-thickness: 1px;
+$default-radio-desaturate-percentage: 50%;
+$default-radio-type: 'outline';
+$radio-lighten-percentage: 5%;
+$radio-on-hover-opacity: 0.2;
+$radio-transition-duration: 0.2s;
+
+@mixin RadioHover(
+    $size: $default-radio-size,
+    $thickness: $default-radio-thickness,
+    $color: $default-radio-color,
+    $border-thickness: $default-radio-border-thickness,
+    $desaturate-percentage: $default-radio-desaturate-percentage,
+    $type: $default-radio-type) {
+  cursor: pointer;
+  border: $border-thickness solid lighten($color, $radio-lighten-percentage);
+
+  @if $type == 'outline' {
+    &:after {
+      opacity: $radio-on-hover-opacity;
+    }
+  }
+
+  @if $type == 'fill' {
+    background-color: transparentize($color, (1-$radio-on-hover-opacity));
+  }
+}
+
+@mixin Radio(
+    $size: $default-radio-size,
+    $thickness: $default-radio-thickness,
+    $color: $default-radio-color,
+    $border-thickness: $default-radio-border-thickness,
+    $desaturate-percentage: $default-radio-desaturate-percentage,
+    $type: $default-radio-type) {
+  // Hide the actual checkbox
+  display: none;
+
+  & + * {
+    // Styling adjacent container as checkbox
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: $size;
+    height: $size;
+    border: $border-thickness solid desaturate(lighten($color, $radio-lighten-percentage), $desaturate-percentage);
+    @include border-radius(50%);
+    @include transition(all $radio-transition-duration);
+
+    &:hover {
+      // Hover styles
+      @include RadioHover(
+        $size: $size, $thickness: $thickness, $color: $color,
+        $border-thickness: $border-thickness,
+        $desaturate-percentage: $desaturate-percentage, $type: $type);
+    }
+
+    &:after {
+      // This contains the round mark.
+      position: absolute;
+      box-sizing: border-box;
+      width: $thickness;
+      height: $thickness;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: '';
+      opacity: 0;
+      background-color: $color;
+      @include border-radius(50%);
+      @include transition(all $radio-transition-duration);
+    }
+  }
+
+  &:checked + * {
+    // Styling adjacent container when it is checked
+    @if $type == 'outline' {
+      // Radio button of type outline
+      border: $border-thickness solid lighten($color, $radio-lighten-percentage);
+    }
+
+    @if $type == 'fill' {
+      // Radio button of type filled
+      border: $border-thickness solid $color;
+      background-color: $color;
+      &:after {
+        background-color: #FFF;
+      }
+    }
+
+    &:after {
+      // Displaying the checkmark
+      opacity: 1;
+    }
+  }
+}

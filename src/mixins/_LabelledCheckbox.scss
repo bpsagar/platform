@@ -1,0 +1,34 @@
+@import 'Checkbox';
+
+
+@mixin LabelledCheckbox(
+    $size: $default-checkbox-size,
+    $thickness: $default-checkbox-thickness,
+    $color: $default-checkbox-color,
+    $border-thickness: $default-checkbox-border-thickness,
+    $border-radius: $default-checkbox-border-radius,
+    $desaturate-percentage: $default-checkbox-desaturate-percentage,
+    $type: $default-checkbox-type) {
+  input[type=checkbox] {
+    @include Checkbox(
+      $size: $size, $thickness: $thickness, $color: $color,
+      $border-thickness: $border-thickness, $border-radius: $border-radius,
+      $desaturate-percentage: $desaturate-percentage, $type: $type);
+  }
+
+  &:hover {
+    cursor: pointer;
+    input[type=checkbox] + * {
+      @include CheckboxHover(
+        $size: $size, $thickness: $thickness, $color: $color,
+        $border-thickness: $border-thickness, $border-radius: $border-radius,
+        $desaturate-percentage: $desaturate-percentage, $type: $type);
+    }
+    input[type=checkbox]:checked {
+      @include Checkbox(
+        $size: $size, $thickness: $thickness, $color: $color,
+        $border-thickness: $border-thickness, $border-radius: $border-radius,
+        $desaturate-percentage: $desaturate-percentage, $type: $type);
+    }
+  }
+}
