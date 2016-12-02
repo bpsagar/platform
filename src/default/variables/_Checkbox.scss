@@ -1,0 +1,34 @@
+// All variables defined here are used for checkboxes
+// All the variables defined here are prefixed with 'checkbox-'
+
+@import 'Base';
+
+// Class name
+$checkbox-class-name: 'checkbox' !default;
+
+// Color
+$checkbox-color-list: $base-color-list !default;
+
+// Font
+$checkbox-font-family: $base-font-family !default;
+$checkbox-font-size: $base-font-size !default;
+$checkbox-font-weight: 400 !default;
+
+// Size
+$checkbox-size: 2rem !default;
+
+// Checkmark thickness
+$checkbox-thickness: 0.2rem !default;
+
+// Border
+$checkbox-border-thickness: 0.2rem !default;
+$checkbox-border-radius: $base-border-radius !default;
+
+// Desaturation percentage
+$checkbox-desaturate-percentage: 10% !default;
+
+// Type
+$checkbox-type: 'fill' !default;
+
+// Size variants
+$checkbox-size-variant-list: $base-size-variant-list !default;
