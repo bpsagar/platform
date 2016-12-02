@@ -1,21 +1,2 @@
-// Importing the mixins in the library
-@import 'Mixins';
-
-// Import the default configurations
-@import 'Config';
-
-// Reset styles
-@import 'Reset';
-
-// Importing all the styles
-@import 'Base';
 @import 'Button';
 @import 'Link';
-@import 'Input';
-@import 'Checkbox';
-@import 'Radio';
-@import 'Tooltip';
-@import 'Heading';
-@import 'Typography';
-@import 'Grid';
-@import 'Utility';

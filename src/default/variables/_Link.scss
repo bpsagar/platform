@@ -1,0 +1,26 @@
+// All variables defined here are used for links
+// All the variables defined here are prefixed with 'link-'
+
+@import 'Base';
+
+// Class name
+$link-class-name: 'link' !default;
+
+// Color
+$link-color-list: $base-color-list !default;
+$link-color-darken-percentage: $base-color-darken-percentage !default;
+
+// Font
+$link-font-family: $base-font-family !default;
+$link-font-size: $base-font-size !default;
+$link-font-weight: 400 !default;
+
+// Border
+$link-border-bottom: 1px solid transparent !default;
+$link-hover-border-bottom: 1px solid !default;
+
+// Transition duration
+$link-transition-duration: $base-transition-duration !default;
+
+// Size variants
+$link-size-variant-list: $base-size-variant-list !default;

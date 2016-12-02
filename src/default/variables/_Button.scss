@@ -1,0 +1,31 @@
+// All variables defined here are used for buttons
+// All the variables defined here are prefixed with 'button-'
+
+@import 'Base';
+
+// Class name
+$button-class-name: 'button' !default;
+
+// Color
+$button-color-list: $base-color-list !default;
+$button-color-darken-percentage: $base-color-darken-percentage !default;
+
+// Font
+$button-font-family: $base-font-family !default;
+$button-font-size: $base-font-size !default;
+$button-font-weight: 600 !default;
+
+// Padding
+$button-padding: 8px 18px !default;
+
+// Border radius
+$button-border-radius: $base-border-radius !default;
+
+// Transition duration
+$button-transition-duration: $base-transition-duration !default;
+
+// Size variants
+$button-size-variant-list: $base-size-variant-list !default;
+
+// Modifier names
+$button-block-modifier-name: 'block' !default;

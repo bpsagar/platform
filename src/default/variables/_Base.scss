@@ -1,0 +1,41 @@
+// All variables defined here are used by all other components as default value
+// Overriding these variables will effect all the components
+// If the styles are to be overridden for specific components, change the
+// component specific variables
+
+// All the variables defined here are prefixed with 'base-'
+
+// Color variables
+$base-color-list: (
+  ('white', #FFF),
+  ('black', #000),
+  ('gray', #444),
+  ('light-gray', #DDD),
+  ('dark-gray', #222),
+  ('red', #E82F3A),
+  ('green', #3AC69F),
+  ('blue', #6988E9),
+  ('orange', #F7923B)
+) !default;
+$base-text-color: #444;
+$base-color-darken-percentage: 10% !default;
+
+// Font variables
+$base-font-family: 'Source Sans Pro', sans-serif !default;
+$base-font-size: 1.4rem !default;
+$base-font-weight-list: (300, 400, 600, 700);
+$base-line-height: 1.3 !default;
+
+// Border radius
+$base-border-radius: 0.2rem !default;
+
+// Transition duration for animations
+$base-transition-duration: 0.3s !default;
+
+// Size variants: List of size name and size scale
+$base-size-variant-list: (
+  ('tiny', 0.5),
+  ('small', 0.8),
+  ('big', 1.6),
+  ('massive', 2.4)
+) !default;

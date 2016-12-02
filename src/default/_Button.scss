@@ -1,69 +1,47 @@
-// Styles for buttons
-
-@import 'Config';
+@import 'variables/Button';
+@import 'Mixins';
 @import 'Functions';
 
-$font-button: $font-base !default;
-$font-size-button: $font-size-base !default;
-$font-weight-button: 600;
-$padding-button: 8px 18px !default;
-$border-radius-button: $border-radius-base !default;
-$color-default-button: $color-primary !default;
-$colors-button: $colors !default;
-$color-button-names: $color-names !default;
-$color-darken-percentage-button: $color-darken-percentage-base !default;
-$transition-duration-button: $transition-duration-base !default;
-$size-variants-button: $size-variants-base !default;
-$size-variant-names-button: $size-variant-names-base !default;
-
-
-.button {
-  font-family: $font-button;
-  font-size: $font-size-button;
-  font-weight: $font-weight-button;
+.#{$button-class-name} {
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
   display: inline-block;
-  padding: $padding-button;
-  color: $white;
+  padding: $button-padding;
+  color: #FFF;
   border: none;
-  border-radius: $border-radius-button;
+  border-radius: $button-border-radius;
   cursor: pointer;
-  background-color: $color-default-button;
-  @include transition(all $transition-duration-button);
+  @include transition(all $button-transition-duration);
 
-  &:hover {
-    background-color: darken($color-default-button, $color-darken-percentage-button);
-  }
-
-  @include modifier('block') {
+  // Block button modifier
+  @include modifier($button-block-modifier-name) {
     display: block;
     width: 100%;
     text-align: center;
   }
 
-  @for $i from 1 through length($size-variants-button) {
-    $size-variant: nth($size-variants-button, $i);
-    $size-variant-name: nth($size-variant-names-button, $i);
+  // Size variant modifiers
+  @each $size-variant-item in $button-size-variant-list {
+    $size-variant-name: nth($size-variant-item, 1);
+    $size-variant: nth($size-variant-item, 2);
     @include modifier($size-variant-name) {
-      font-size: $font-size-button * $size-variant;
-      padding: multiply($padding-button, $size-variant);
+      font-size: $button-font-size * $size-variant;
+      padding: multiply($button-padding, $size-variant);
     }
   }
 
-  @for $i from 1 through length($colors-button) {
-    $color-button: nth($colors-button, $i);
-    $color-button-name: nth($color-button-names, $i);
+  // Color variant modifiers
+  @each $button-color-item in $button-color-list {
+    $button-color-name: nth($button-color-item, 1);
+    $button-color: nth($button-color-item, 2);
 
-    @include modifier($color-button-name) {
-      background-color: $color-button;
+    @include modifier($button-color-name) {
+      background-color: $button-color;
 
       &:hover {
-        background-color: darken($color-button, $color-darken-percentage-button);
+        background-color: darken($button-color, $button-color-darken-percentage);
       }
     }
   }
-}
-
-input[type=submit],
-button {
-  @extend .button;
 }
