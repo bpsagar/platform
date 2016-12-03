@@ -8,6 +8,7 @@ $input-class-name: 'input' !default;
 
 // Color
 $input-border-color-list: $base-color-list !default;
+$input-disabled-background-color: #F1F1F1 !default;
 
 // Font
 $input-font-family: $base-font-family !default;
@@ -18,7 +19,7 @@ $input-font-weight: 400 !default;
 $input-padding: 9px 10px !default;
 
 // Border
-$input-border: 1px solid #EEE !default;
+$input-border: 1px solid #DDD !default;
 $input-border-radius: $base-border-radius !default;
 
 // Transition duration

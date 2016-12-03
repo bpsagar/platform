@@ -212,7 +212,7 @@
   width: 100%;
   padding: 9px 10px;
   background-color: none;
-  border: 1px solid #EEE;
+  border: 1px solid #DDD;
   border-radius: 0.2rem;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -234,30 +234,84 @@
   .input-white:hover, .input-white:focus {
     border-color: #FFF;
     box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5); }
+  .input-white[disabled] {
+    border: 1px solid #DDD;
+    background-color: #F1F1F1; }
+    .input-white[disabled]:hover, .input-white[disabled]:focus {
+      border: 1px solid #DDD;
+      box-shadow: none; }
   .input-black:hover, .input-black:focus {
     border-color: #000;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5); }
+  .input-black[disabled] {
+    border: 1px solid #DDD;
+    background-color: #F1F1F1; }
+    .input-black[disabled]:hover, .input-black[disabled]:focus {
+      border: 1px solid #DDD;
+      box-shadow: none; }
   .input-gray:hover, .input-gray:focus {
     border-color: #444;
     box-shadow: 0 0 3px 0 rgba(68, 68, 68, 0.5); }
+  .input-gray[disabled] {
+    border: 1px solid #DDD;
+    background-color: #F1F1F1; }
+    .input-gray[disabled]:hover, .input-gray[disabled]:focus {
+      border: 1px solid #DDD;
+      box-shadow: none; }
   .input-light-gray:hover, .input-light-gray:focus {
     border-color: #DDD;
     box-shadow: 0 0 3px 0 rgba(221, 221, 221, 0.5); }
+  .input-light-gray[disabled] {
+    border: 1px solid #DDD;
+    background-color: #F1F1F1; }
+    .input-light-gray[disabled]:hover, .input-light-gray[disabled]:focus {
+      border: 1px solid #DDD;
+      box-shadow: none; }
   .input-dark-gray:hover, .input-dark-gray:focus {
     border-color: #222;
     box-shadow: 0 0 3px 0 rgba(34, 34, 34, 0.5); }
+  .input-dark-gray[disabled] {
+    border: 1px solid #DDD;
+    background-color: #F1F1F1; }
+    .input-dark-gray[disabled]:hover, .input-dark-gray[disabled]:focus {
+      border: 1px solid #DDD;
+      box-shadow: none; }
   .input-red:hover, .input-red:focus {
     border-color: #E82F3A;
     box-shadow: 0 0 3px 0 rgba(232, 47, 58, 0.5); }
+  .input-red[disabled] {
+    border: 1px solid #DDD;
+    background-color: #F1F1F1; }
+    .input-red[disabled]:hover, .input-red[disabled]:focus {
+      border: 1px solid #DDD;
+      box-shadow: none; }
   .input-green:hover, .input-green:focus {
     border-color: #3AC69F;
     box-shadow: 0 0 3px 0 rgba(58, 198, 159, 0.5); }
+  .input-green[disabled] {
+    border: 1px solid #DDD;
+    background-color: #F1F1F1; }
+    .input-green[disabled]:hover, .input-green[disabled]:focus {
+      border: 1px solid #DDD;
+      box-shadow: none; }
   .input-blue:hover, .input-blue:focus {
     border-color: #6988E9;
     box-shadow: 0 0 3px 0 rgba(105, 136, 233, 0.5); }
+  .input-blue[disabled] {
+    border: 1px solid #DDD;
+    background-color: #F1F1F1; }
+    .input-blue[disabled]:hover, .input-blue[disabled]:focus {
+      border: 1px solid #DDD;
+      box-shadow: none; }
   .input-orange:hover, .input-orange:focus {
     border-color: #F7923B;
     box-shadow: 0 0 3px 0 rgba(247, 146, 59, 0.5); }
+  .input-orange[disabled] {
+    border: 1px solid #DDD;
+    background-color: #F1F1F1; }
+    .input-orange[disabled]:hover, .input-orange[disabled]:focus {
+      border: 1px solid #DDD;
+      box-shadow: none; }
 
 .checkbox {
   font-family: "Source Sans Pro", sans-serif;

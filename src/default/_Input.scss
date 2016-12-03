@@ -32,6 +32,15 @@
         border-color: $border-color;
         box-shadow: 0 0 3px 0 transparentize($border-color, 0.5);
       }
+
+      &[disabled] {
+        border: $input-border;
+        background-color: $input-disabled-background-color;
+        &:hover, &:focus {
+          border: $input-border;
+          box-shadow: none;
+        }
+      }
     }
   }
 }
