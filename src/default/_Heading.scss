@@ -1,0 +1,15 @@
+@import 'variables/Heading';
+@import 'Mixins';
+@import 'Functions';
+
+@for $i from 1 through length($heading-config-list) {
+  $heading-config-item: nth($heading-config-list, $i);
+  .#{$heading-class-name}-#{$i} {
+    font-family: nth($heading-config-item, 1);
+    font-size: nth($heading-config-item, 2);
+    font-weight: nth($heading-config-item, 3);
+    line-height: nth($heading-config-item, 4);
+    color: nth($heading-config-item, 5);
+    margin: $heading-margin;
+  }
+}

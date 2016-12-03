@@ -1,0 +1,18 @@
+// All variables defined here are used for headings
+// All the variables defined here are prefixed with 'heading-'
+
+@import 'Base';
+
+// Class name
+$heading-class-name: 'heading' !default;
+
+// List of (font-family, font-size, font-weight, line-height, color)
+$heading-config-list: (
+  ($base-font-family, 5rem, 300, 1.5, #222),
+  ($base-font-family, 4.4rem, 300, 1.4, #222),
+  ($base-font-family, 3.6rem, 300, 1.4, #222),
+  ($base-font-family, 3rem, 300, 1.3, #222),
+  ($base-font-family, 2.4rem, 300, 1.3, #222),
+  ($base-font-family, 1.8rem, 300, 1.3, #222),
+) !default;
+$heading-margin: 0.5rem 0 0.5rem 0 !default;
