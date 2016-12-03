@@ -15,19 +15,19 @@ $radio-font-size: $base-font-size !default;
 $radio-font-weight: 400 !default;
 
 // Size
-$radio-size: 2rem !default;
+$radio-size: 1.8rem !default;
 
-// Radio inner circle thickness
-$radio-thickness: 1.4rem !default;
+// Checkmark thickness
+$radio-thickness: 1.2rem !default;
 
 // Border
-$radio-border-thickness: 0.2rem !default;
+$radio-border-width: 0.2rem !default;
 
-// Desaturation percentage
-$radio-desaturate-percentage: 10% !default;
+// Lighten percentage
+$radio-lighten-percentage: 10% !default;
 
-// Type
-$radio-type: 'outline' !default;
+// Transition duration
+$radio-transition-duration: $base-transition-duration !default;
 
 // Size variants
 $radio-size-variant-list: $base-size-variant-list !default;

@@ -7,46 +7,131 @@
   font-size: $radio-font-size;
   font-weight: $radio-font-weight;
 
+  input[type=radio] {
+    display: none;
+    
+    // radio styles
+    @include Radio {
+      position: relative;
+      display: inline-block;
+      width: $radio-size;
+      height: $radio-size;
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: 50%;
+      border-width: $radio-border-width;
+      border-style: solid;
+    }
+
+    // Radiomark styles
+    @include Radiomark {
+      position: absolute;
+      box-sizing: border-box;
+      width: $radio-thickness;
+      height: $radio-thickness;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: '';
+      opacity: 0;
+      border-radius: 50%;
+      @include transition(all $radio-transition-duration);
+    }
+
+    &:checked {
+      @include Radiomark {
+        opacity: 1;
+      }
+    }
+
+    &:disabled {
+      @include Radio {
+        cursor: not-allowed !important;
+      }
+    }
+  }
+
   // Size variant modifiers
   @each $size-variant-item in $radio-size-variant-list {
     $size-variant-name: nth($size-variant-item, 1);
     $size-variant: nth($size-variant-item, 2);
     @include modifier($size-variant-name) {
       font-size: $radio-font-size * $size-variant;
-      @include LabelledRadio(
-        $size: $radio-size * $size-variant,
-        $thickness: $radio-thickness * $size-variant,
-        $border-thickness: $radio-border-thickness,
-        $desaturate-percentage: $radio-desaturate-percentage,
-        $type: $radio-type);
+
+      input[type=radio] {
+        @include Radio {
+          width: $radio-size * $size-variant;
+          height: $radio-size * $size-variant;
+          border-width: $radio-border-width * $size-variant;
+        }
+
+        @include Radiomark {
+          width: $radio-thickness * $size-variant;
+          height: $radio-thickness * $size-variant;
+        }
+      }
     }
   }
 
-  // Color variant modifiers
+  // Color variants
   @each $radio-color-item in $radio-color-list {
     $radio-color-name: nth($radio-color-item, 1);
     $radio-color: nth($radio-color-item, 2);
     @include modifier($radio-color-name) {
-      @include LabelledRadio(
-        $size: $radio-size,
-        $thickness: $radio-thickness,
-        $color: $radio-color,
-        $border-thickness: $radio-border-thickness,
-        $desaturate-percentage: $radio-desaturate-percentage,
-        $type: $radio-type);
+      input[type=radio] {
+        @include Radio {
+          border-color: $radio-color;
+        }
 
-      @each $size-variant-item in $radio-size-variant-list {
-        $size-variant-name: nth($size-variant-item, 1);
-        $size-variant: nth($size-variant-item, 2);
-        @include modifier($size-variant-name) {
-          font-size: $radio-font-size * $size-variant;
-          @include LabelledRadio(
-            $size: $radio-size * $size-variant,
-            $thickness: $radio-thickness * $size-variant,
-            $color: $radio-color,
-            $border-thickness: $radio-border-thickness,
-            $desaturate-percentage: $radio-desaturate-percentage,
-            $type: $radio-type);
+        @include Radiomark {
+          background-color: $radio-color;
+        }
+
+        &:checked {
+          @include Radiomark {
+            background-color: $radio-color;
+          }
+        }
+
+        &:disabled {
+          @include Radio {
+            border-color: lighten($radio-color, 15%) !important;
+            cursor: not-allowed !important;
+          }
+
+          @include Radiomark {
+            background-color: lighten($radio-color, 20%) !important;
+          }
+        }
+      }
+
+      &:hover {
+        input[type=radio] {
+          @include Radiomark {
+            background-color: lighten($radio-color, $radio-lighten-percentage);
+            opacity: 0.5;
+          }
+
+          &:checked {
+            @include Radiomark {
+              background-color: $radio-color;
+              opacity: 1;
+            }
+          }
+
+          &:disabled {
+            @include Radiomark {
+              opacity: 0
+            }
+
+            &:checked {
+              @include Radiomark {
+                opacity: 1;
+              }
+            }
+          }
         }
       }
     }
