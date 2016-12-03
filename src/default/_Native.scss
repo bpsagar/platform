@@ -1,0 +1,56 @@
+@import 'variables/Native';
+
+// Heading
+@import 'variables/Heading';
+@import 'Heading';
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    @extend .#{$heading-class-name}-#{$i};
+  }
+}
+
+// Link
+@import 'variables/Link';
+@import 'Link';
+
+a {
+  @extend .#{$link-class-name};
+  @extend .#{$link-class-name}-#{$native-color-name};
+}
+
+// Button
+@import 'variables/Button';
+@import 'Button';
+
+button, input[type=submit], input[type=reset] {
+  @extend .#{$button-class-name};
+  @extend .#{$button-class-name}-#{$native-color-name};
+}
+
+// Input
+@import 'variables/Input';
+@import 'Input';
+
+input[type=text], input[type=number], textarea, select {
+  @extend .#{$input-class-name};
+  @extend .#{$input-class-name}-#{$native-color-name};
+}
+
+// Checkbox
+@import 'variables/Checkbox';
+@import 'Checkbox';
+
+label {
+  @extend .#{$checkbox-class-name};
+  @extend .#{$checkbox-class-name}-#{$native-color-name};
+}
+
+// Radip
+@import 'variables/Radio';
+@import 'Radio';
+
+label {
+  @extend .#{$radio-class-name};
+  @extend .#{$radio-class-name}-#{$native-color-name};
+}
