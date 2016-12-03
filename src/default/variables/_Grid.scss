@@ -1,0 +1,18 @@
+// All variables defined here are used for grid related styles
+// All the variables defined here are prefixed with 'grid-'
+
+@import 'Base';
+
+// Class name
+$grid-container-class-name: 'container' !default;
+// Container width list
+$grid-container-width-list: (
+  ('narrow', 600px),
+  ('default', 1024px),
+  ('full', 100%),
+) !default;
+
+// List of column sizes
+$grid-column-size-list: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) !default;
+$grid-float-column-class-name: 'f-column' !default;
+$grid-table-column-class-name: 't-column' !default;

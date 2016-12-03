@@ -1,0 +1,60 @@
+@import 'variables/Grid';
+@import 'Mixins';
+@import 'Functions';
+
+@each $grid-container-width-item in $grid-container-width-list {
+  $name: nth($grid-container-width-item, 1);
+  $width: nth($grid-container-width-item, 2);
+  .#{$grid-container-class-name}-#{$name} {
+    margin: auto;
+    width: $width;
+  }
+}
+
+@each $column in $grid-column-size-list {
+  // Floating columns
+  // These columns can wrap but it's contents can't be vertically aligned
+  .#{$grid-float-column-class-name}s-#{$column} {
+    // Columns container that can have a maximum of `$column` columns
+    display: block;
+    width: 100%;
+
+    @for $i from 1 through $column {
+      .#{$grid-float-column-class-name}-#{$i} {
+        // A column with a width proportional to `$i`
+        float: left;
+        width: percentage($i / $column);
+      }
+    }
+  }
+}
+
+@each $column in $grid-column-size-list {
+  // Tabular columns
+  // These columns can't wrap but it's contents can be vertically aligned
+  .#{$grid-table-column-class-name}s-#{$column} {
+    // Columns container that can have a maximum of `$column` columns
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+
+    @for $i from 1 through $column {
+      .#{$grid-table-column-class-name}-#{$i} {
+        // A column with a width proportional to `$i`
+        display: table-cell;
+        width: percentage($i / $column);
+        vertical-align: top;
+      }
+    }
+
+    .#{$grid-table-column-class-name} {
+      @include modifier('middle') {
+        vertical-align: middle;
+      }
+
+      @include modifier('bottom') {
+        vertical-align: bottom;
+      }
+    }
+  }
+}
