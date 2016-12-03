@@ -18,6 +18,8 @@
       height: $checkbox-size;
       vertical-align: middle;
       cursor: pointer;
+      border-width: $checkbox-border-width;
+      border-style: solid;
     }
 
     // Checkmark styles
@@ -84,7 +86,7 @@
     @include modifier($checkbox-color-name) {
       input[type=checkbox] {
         @include Checkbox {
-          border: $checkbox-border-width solid $checkbox-color;
+          border-color: $checkbox-color;
           border-radius: $checkbox-border-radius;
         }
 
