@@ -42,6 +42,20 @@
       &:hover {
         background-color: darken($button-color, $button-color-darken-percentage);
       }
+
+      &:active {
+        background-color: darken($button-color, $button-color-darken-percentage * 2);
+      }
+
+      &[disabled] {
+        color: lighten($button-color, 20%);
+        background-color: lighten($button-color, 5%);
+        cursor: not-allowed;
+
+        &:hover, &:active {
+          background-color: lighten($button-color, 5%);
+        }
+      }
     }
   }
 }
