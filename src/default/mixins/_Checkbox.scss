@@ -1,112 +1,11 @@
-@import 'Normalize';
-
-
-// Default variables
-$default-checkbox-size: 18px;
-$default-checkbox-thickness: 1px;
-$default-checkbox-color: #666;
-$default-checkbox-border-thickness: 1px;
-$default-checkbox-border-radius: 15%;
-$default-checkbox-desaturate-percentage: 50%;
-$default-checkbox-type: 'outline';
-$checkbox-lighten-percentage: 5%;
-$checkbox-on-hover-opacity: 0.2;
-$checkbox-transition-duration: 0.2s;
-
-
-@mixin CheckboxHover(
-    $size: $default-checkbox-size,
-    $thickness: $default-checkbox-thickness,
-    $color: $default-checkbox-color,
-    $border-thickness: $default-checkbox-border-thickness,
-    $border-radius: $default-checkbox-border-radius,
-    $desaturate-percentage: $default-checkbox-desaturate-percentage,
-    $type: $default-checkbox-type) {
-  cursor: pointer;
-  border: $border-thickness solid lighten($color, $checkbox-lighten-percentage);
-
-  @if $type == 'outline' {
-    &:after {
-      opacity: $checkbox-on-hover-opacity;
-    }
-  }
-
-  @if $type == 'fill' {
-    background-color: transparentize($color, (1-$checkbox-on-hover-opacity));
+@mixin Checkbox() {
+  & + * {
+    @content
   }
 }
 
-@mixin Checkbox(
-    $size: $default-checkbox-size,
-    $thickness: $default-checkbox-thickness,
-    $color: $default-checkbox-color,
-    $border-thickness: $default-checkbox-border-thickness,
-    $border-radius: $default-checkbox-border-radius,
-    $desaturate-percentage: $default-checkbox-desaturate-percentage,
-    $type: $default-checkbox-type) {
-  // Hide the actual checkbox
-  display: none;
-  
-  & + * {
-    // Styling adjacent container as checkbox
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    width: $size;
-    height: $size;
-    border: $border-thickness solid desaturate(lighten($color, $checkbox-lighten-percentage), $desaturate-percentage);
-    box-sizing: border-box;
-    @include border-radius($border-radius);
-    @include transition(all $checkbox-transition-duration);
-
-    &:hover {
-      // Hover styles
-      @include CheckboxHover(
-        $size: $size, $thickness: $thickness, $color: $color,
-        $border-thickness: $border-thickness, $border-radius: $border-radius,
-        $desaturate-percentage: $desaturate-percentage, $type: $type);
-    }
-
-    &:after {
-      // This contains the tick mark. Its a rotated rectangle with border
-      // on two adjacent sides
-      position: absolute;
-      box-sizing: border-box;
-      width: $size / 1.5;
-      height: $size / 3;
-      margin: auto;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      content: '';
-      opacity: 0;
-      border-left: $thickness solid $color;
-      border-bottom: $thickness solid $color;
-      @include transform(translateY(-20%) rotate(-45deg));
-      @include transition(all $checkbox-transition-duration);
-    }
-  }
-
-  &:checked + * {
-    // Styling adjacent container when it is checked
-    @if $type == 'outline' {
-      // Checkbox of type outline
-      border: $border-thickness solid lighten($color, $checkbox-lighten-percentage);
-    }
-
-    @if $type == 'fill' {
-      // Checkbox of type filled
-      border: $border-thickness solid $color;
-      background-color: $color;
-      &:after {
-        border-color: #FFF;
-      }
-    }
-
-    &:after {
-      // Displaying the checkmark
-      opacity: 1;
-    }
+@mixin Checkmark() {
+  & + *:after {
+    @content
   }
 }

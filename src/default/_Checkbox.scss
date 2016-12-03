@@ -7,49 +7,133 @@
   font-size: $checkbox-font-size;
   font-weight: $checkbox-font-weight;
 
+  input[type=checkbox] {
+    display: none;
+    
+    // Checkbox styles
+    @include Checkbox {
+      position: relative;
+      display: inline-block;
+      width: $checkbox-size;
+      height: $checkbox-size;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    // Checkmark styles
+    @include Checkmark {
+      position: absolute;
+      box-sizing: border-box;
+      width: $checkbox-size / 1.5;
+      height: $checkbox-size / 3;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: '';
+      opacity: 0;
+      border-left: $checkbox-thickness solid #FFF;
+      border-bottom: $checkbox-thickness solid #FFF;
+      @include transform(translateY(-20%) rotate(-45deg));
+      @include transition(all $checkbox-transition-duration);
+    }
+
+    &:checked {
+      @include Checkmark {
+        opacity: 1;
+      }
+    }
+
+    &:disabled {
+      @include Checkbox {
+        background-color: $checkbox-disabled-background-color !important;
+        border-color: $checkbox-disabled-color !important;
+        cursor: not-allowed !important;
+      }
+    }
+  }
+
   // Size variant modifiers
   @each $size-variant-item in $checkbox-size-variant-list {
     $size-variant-name: nth($size-variant-item, 1);
     $size-variant: nth($size-variant-item, 2);
     @include modifier($size-variant-name) {
       font-size: $checkbox-font-size * $size-variant;
-      @include LabelledCheckbox(
-        $size: $checkbox-size * $size-variant,
-        $thickness: $checkbox-thickness,
-        $border-thickness: $checkbox-border-thickness,
-        $border-radius: $checkbox-border-radius,
-        $desaturate-percentage: $checkbox-desaturate-percentage,
-        $type: $checkbox-type);
+
+      input[type=checkbox] {
+        @include Checkbox {
+          width: $checkbox-size * $size-variant;
+          height: $checkbox-size * $size-variant;
+          border-width: $checkbox-border-width * $size-variant;
+        }
+
+        @include Checkmark {
+          width: $checkbox-size * $size-variant / 1.5;
+          height: $checkbox-size * $size-variant / 3;
+          border-width: $checkbox-thickness * $size-variant;
+        }
+      }
     }
   }
 
-  // Color variant modifiers
+  // Color variants
   @each $checkbox-color-item in $checkbox-color-list {
     $checkbox-color-name: nth($checkbox-color-item, 1);
     $checkbox-color: nth($checkbox-color-item, 2);
     @include modifier($checkbox-color-name) {
-      @include LabelledCheckbox(
-        $size: $checkbox-size,
-        $thickness: $checkbox-thickness,
-        $color: $checkbox-color,
-        $border-thickness: $checkbox-border-thickness,
-        $border-radius: $checkbox-border-radius,
-        $desaturate-percentage: $checkbox-desaturate-percentage,
-        $type: $checkbox-type);
+      input[type=checkbox] {
+        @include Checkbox {
+          border: $checkbox-border-width solid $checkbox-color;
+          border-radius: $checkbox-border-radius;
+        }
 
-      @each $size-variant-item in $checkbox-size-variant-list {
-        $size-variant-name: nth($size-variant-item, 1);
-        $size-variant: nth($size-variant-item, 2);
-        @include modifier($size-variant-name) {
-          font-size: $checkbox-font-size * $size-variant;
-          @include LabelledCheckbox(
-            $size: $checkbox-size * $size-variant,
-            $thickness: $checkbox-thickness,
-            $color: $checkbox-color,
-            $border-thickness: $checkbox-border-thickness,
-            $border-radius: $checkbox-border-radius,
-            $desaturate-percentage: $checkbox-desaturate-percentage,
-            $type: $checkbox-type);
+        &:checked {
+          @include Checkbox {
+            background-color: $checkbox-color;
+          }
+        }
+
+        &:disabled {
+          @include Checkbox {
+            background-color: lighten($checkbox-color, 20%) !important;
+            border-color: lighten($checkbox-color, 15%) !important;
+            cursor: not-allowed !important;
+          }
+        }
+      }
+
+      &:hover {
+        input[type=checkbox] {
+          @include Checkbox {
+            background-color: lighten($checkbox-color, $checkbox-lighten-percentage);
+          }
+
+          @include Checkmark {
+            opacity: 0.5;
+          }
+
+          &:checked {
+            @include Checkbox {
+              background-color: $checkbox-color;
+            }
+
+            @include Checkmark {
+              opacity: 1;
+            }
+          }
+
+          &:disabled {
+            @include Checkmark {
+              opacity: 0
+            }
+
+            &:checked {
+              @include Checkmark {
+                opacity: 1;
+              }
+            }
+          }
         }
       }
     }

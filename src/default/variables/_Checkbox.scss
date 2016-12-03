@@ -15,20 +15,24 @@ $checkbox-font-size: $base-font-size !default;
 $checkbox-font-weight: 400 !default;
 
 // Size
-$checkbox-size: 2rem !default;
+$checkbox-size: 1.8rem !default;
 
 // Checkmark thickness
 $checkbox-thickness: 0.2rem !default;
 
 // Border
-$checkbox-border-thickness: 0.2rem !default;
+$checkbox-border-width: 0.2rem !default;
 $checkbox-border-radius: $base-border-radius !default;
 
-// Desaturation percentage
-$checkbox-desaturate-percentage: 10% !default;
+// Lighten percentage
+$checkbox-lighten-percentage: 10% !default;
 
-// Type
-$checkbox-type: 'fill' !default;
+// Transition duration
+$checkbox-transition-duration: $base-transition-duration !default;
+
+// Checkbox disabled
+$checkbox-disabled-color: #DDD !default;
+$checkbox-disabled-background-color: #EEE !default;
 
 // Size variants
 $checkbox-size-variant-list: $base-size-variant-list !default;
