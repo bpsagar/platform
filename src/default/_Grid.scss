@@ -8,6 +8,7 @@
   .#{$grid-container-class-name}-#{$name} {
     margin: auto;
     width: $width;
+    max-width: 100%;
   }
 }
 

@@ -996,15 +996,18 @@ body {
 
 .container-narrow {
   margin: auto;
-  width: 600px; }
+  width: 600px;
+  max-width: 100%; }
 
 .container-default {
   margin: auto;
-  width: 1024px; }
+  width: 1024px;
+  max-width: 100%; }
 
 .container-full {
   margin: auto;
-  width: 100%; }
+  width: 100%;
+  max-width: 100%; }
 
 .f-columns-1 {
   display: block;
