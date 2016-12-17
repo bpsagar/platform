@@ -20,6 +20,15 @@
   }
 }
 
+@each $utility-border-color-item in $utility-border-color-list {
+  $utility-border-color-name: nth($utility-border-color-item, 1);
+  $utility-border-color: nth($utility-border-color-item, 2);
+
+  .#{$utility-border-class-name}-#{$utility-border-color-name} {
+    border: .1rem solid $utility-border-color;
+  }
+}
+
 .#{$utility-text-class-name}-left {
   text-align: left;
 }

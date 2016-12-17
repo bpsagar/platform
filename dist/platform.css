@@ -3078,6 +3078,33 @@ body {
 .background-orange {
   background-color: #F7923B; }
 
+.border-white {
+  border: 0.1rem solid #FFF; }
+
+.border-black {
+  border: 0.1rem solid #000; }
+
+.border-gray {
+  border: 0.1rem solid #444; }
+
+.border-light-gray {
+  border: 0.1rem solid #DDD; }
+
+.border-dark-gray {
+  border: 0.1rem solid #222; }
+
+.border-red {
+  border: 0.1rem solid #E82F3A; }
+
+.border-green {
+  border: 0.1rem solid #3AC69F; }
+
+.border-blue {
+  border: 0.1rem solid #6988E9; }
+
+.border-orange {
+  border: 0.1rem solid #F7923B; }
+
 .text-left {
   text-align: left; }
 
