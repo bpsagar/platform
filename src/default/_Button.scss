@@ -41,10 +41,14 @@
 
       &:hover {
         background-color: darken($button-color, $button-color-darken-percentage);
+        color: #FFF;
+        border: none;
       }
 
       &:active {
         background-color: darken($button-color, $button-color-darken-percentage * 2);
+        color: #FFF;
+        border: none;
       }
 
       &[disabled] {
