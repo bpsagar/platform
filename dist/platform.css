@@ -3126,6 +3126,36 @@ body {
 .text-massive {
   font-size: 3.36rem; }
 
+.padding {
+  padding: 10px; }
+
+.padding-tiny {
+  padding: 5px; }
+
+.padding-small {
+  padding: 8px; }
+
+.padding-big {
+  padding: 16px; }
+
+.padding-massive {
+  padding: 24px; }
+
+.margin {
+  margin: 10px; }
+
+.margin-tiny {
+  margin: 5px; }
+
+.margin-small {
+  margin: 8px; }
+
+.margin-big {
+  margin: 16px; }
+
+.margin-massive {
+  margin: 24px; }
+
 .heading-1, h1 {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 5rem;

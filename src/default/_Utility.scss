@@ -49,3 +49,29 @@
     font-size: $utility-text-size * $size-variant;
   }
 }
+
+.#{$utility-padding-class-name} {
+  padding: $utility-padding;
+}
+
+@each $size-variant-item in $utility-padding-size-variant-list {
+  $size-variant-name: nth($size-variant-item, 1);
+  $size-variant: nth($size-variant-item, 2);
+
+  .#{$utility-padding-class-name}-#{$size-variant-name} {
+    padding: multiply($utility-padding, $size-variant);
+  }
+}
+
+.#{$utility-margin-class-name} {
+  margin: $utility-margin;
+}
+
+@each $size-variant-item in $utility-margin-size-variant-list {
+  $size-variant-name: nth($size-variant-item, 1);
+  $size-variant: nth($size-variant-item, 2);
+
+  .#{$utility-margin-class-name}-#{$size-variant-name} {
+    margin: multiply($utility-margin, $size-variant);
+  }
+}

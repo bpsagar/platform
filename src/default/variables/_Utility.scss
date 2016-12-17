@@ -12,3 +12,11 @@ $utility-text-class-name: 'text' !default;
 $utility-text-color-list: $base-color-list !default;
 $utility-text-size: $base-font-size !default;
 $utility-text-size-variant-list: $base-size-variant-list !default;
+
+$utility-padding-class-name: 'padding' !default;
+$utility-padding: 10px !default;
+$utility-padding-size-variant-list: $base-size-variant-list !default;
+
+$utility-margin-class-name: 'margin' !default;
+$utility-margin: 10px !default;
+$utility-margin-size-variant-list: $base-size-variant-list !default;
