@@ -32,7 +32,7 @@ button, input[type=submit], input[type=reset] {
 @import 'variables/Input';
 @import 'Input';
 
-input[type=text], input[type=number], textarea, select {
+input[type=text], input[type=number], input[type=password], textarea, select {
   @extend .#{$input-class-name};
   @extend .#{$input-class-name}-#{$native-color-name};
 }
