@@ -1,0 +1,14 @@
+// All variables defined here are used for utility classes
+// All the variables defined here are prefixed with 'utility-'
+
+@import 'Base';
+
+$utility-window-class-name: 'window' !default;
+
+$utility-background-class-name: 'background' !default;
+$utility-background-color-list: $base-color-list !default;
+
+$utility-text-class-name: 'text' !default;
+$utility-text-color-list: $base-color-list !default;
+$utility-text-size: $base-font-size !default;
+$utility-text-size-variant-list: $base-size-variant-list !default;

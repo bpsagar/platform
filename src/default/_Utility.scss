@@ -1,6 +1,51 @@
+@import 'variables/Utility';
 @import 'Mixins';
 @import 'Functions';
 
 .clearfix {
   clear: both;
+}
+
+.#{$utility-window-class-name} {
+  width: 100%;
+  height: 100vh;
+}
+
+@each $utility-background-color-item in $utility-background-color-list {
+  $utility-background-color-name: nth($utility-background-color-item, 1);
+  $utility-background-color: nth($utility-background-color-item, 2);
+
+  .#{$utility-background-class-name}-#{$utility-background-color-name} {
+    background-color: $utility-background-color;
+  }
+}
+
+.#{$utility-text-class-name}-left {
+  text-align: left;
+}
+
+.#{$utility-text-class-name}-right {
+  text-align: right;
+}
+
+.#{$utility-text-class-name}-center {
+  text-align: center;
+}
+
+@each $utility-text-color-item in $utility-text-color-list {
+  $utility-text-color-name: nth($utility-text-color-item, 1);
+  $utility-text-color: nth($utility-text-color-item, 2);
+
+  .#{$utility-text-class-name}-#{$utility-text-color-name} {
+    color: $utility-text-color;
+  }
+}
+
+@each $size-variant-item in $utility-text-size-variant-list {
+  $size-variant-name: nth($size-variant-item, 1);
+  $size-variant: nth($size-variant-item, 2);
+
+  .#{$utility-text-class-name}-#{$size-variant-name} {
+    font-size: $utility-text-size * $size-variant;
+  }
 }
