@@ -1,0 +1,24 @@
+@import '../variables/Base';
+
+@mixin device($device-name) {
+  @each $device in $base-device-list {
+    @if $device-name == nth($device, 1) {
+      $device-min-width: nth($device, 2);
+      $device-max-width: nth($device, 3);
+      @if $device-min-width != none and $device-max-width != none {
+        @media screen and (min-width: $device-min-width) and (max-width: $device-max-width) {
+          @content
+        }
+      }
+      @else if $device-min-width != none {
+        @media screen and (min-width: $device-min-width) {
+          @content
+        }
+      } @else {
+        @media screen and (max-width: $device-max-width) {
+          @content
+        }
+      }
+    }
+  }
+}

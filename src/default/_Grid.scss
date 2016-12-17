@@ -25,6 +25,19 @@
         float: left;
         width: percentage($i / $column);
       }
+
+      @each $device in $base-device-list {
+        $device-name: nth($device, 1);
+        $device-min-width: nth($device, 2);
+        $device-max-width: nth($device, 3);
+
+        .#{$grid-float-column-class-name}-#{$i}-#{$device-name} {
+          @include device($device-name) {
+            float: left;
+            width: percentage($i / $column);
+          }
+        }
+      }
     }
   }
 }

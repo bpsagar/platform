@@ -39,3 +39,10 @@ $base-size-variant-list: (
   ('big', 1.6),
   ('massive', 2.4)
 ) !default;
+
+// Device widths for responsive mobile designs
+$base-device-list: (
+  ('mobile', none, 750px),
+  ('tablet', 751px, 1024px),
+  ('desktop', 1024px, none)
+) !default;
